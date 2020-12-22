@@ -8,12 +8,12 @@ resource "google_compute_subnetwork" "modular_tf_subnet" {
   network       = var.VPC_Name
   count         = length(data.google_compute_regions.available.names)
 
-  secondary_ip_range {
-    range_name    = "tf-test-secondary-range-update${count.index}"
-    ip_cidr_range = "192.168.${count.index}.0/24"
-   }
+  #secondary_ip_range {
+   # range_name    = "tf-test-secondary-range-update${count.index}"
+    #ip_cidr_range = "192.168.${count.index}.0/24"
+   #}
 
-  depends_on = [google_compute_network.vpc_network]
+  #depends_on = [google_compute_network.vpc_network]
 
-}
+#}
 
