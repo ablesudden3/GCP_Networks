@@ -15,5 +15,5 @@ resource "google_compute_subnetwork" "modular_tf_subnet" {
 
   depends_on = [google_compute_network.vpc_network]
 
-#}
+}
 
