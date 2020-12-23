@@ -1,6 +1,15 @@
 data "google_compute_regions" "available" {
 }
 
+resource "google_compute_network" "vpc_network" {
+  name                            = var.VPC_Name
+  auto_create_subnetworks         = false
+  description                     = "Our test VPC"
+  routing_mode                    = "REGIONAL"
+  delete_default_routes_on_create = false
+ 
+}
+
 resource "google_compute_subnetwork" "modular_tf_subnet" {
   count         = length(data.google_compute_regions.available.names)
   name          = "test-subnetworkterra${count.index}"
