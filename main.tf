@@ -13,7 +13,7 @@ resource "google_compute_subnetwork" "modular_tf_subnet" {
     #ip_cidr_range = "192.168.${count.index}.0/24"
    #}
 
-  #depends_on = [google_compute_network.vpc_network]
+  depends_on = [google_compute_network.vpc_network]
 
 #}
 
